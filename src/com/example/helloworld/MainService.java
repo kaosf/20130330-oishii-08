@@ -12,6 +12,8 @@ public class MainService extends Service {
 
   private Handler handler = new Handler();
 
+  private boolean loop = true;
+
   @Override
   public IBinder onBind(Intent intent) {
     return null;
@@ -23,7 +25,7 @@ public class MainService extends Service {
     this.thread = new Thread(new Runnable() {
       @Override
       public void run() {
-        while (true) {
+        while (loop) {
           try {
             MainService.this.handler.post(new Runnable() {
               @Override
@@ -34,6 +36,7 @@ public class MainService extends Service {
             Thread.sleep(10 * 1000);
           } catch (InterruptedException e) {
             e.printStackTrace();
+            return;
           }
         }
       }
@@ -43,8 +46,16 @@ public class MainService extends Service {
 
   @Override
   public void onDestroy() {
-    super.onDestroy();
+    this.loop = false;
     this.thread.interrupt();
+    super.onDestroy();
   }
 
+  // void start() {
+  //   this.thread.start();
+  // }
+
+  // void stop() {
+  //   this.loop = false;
+  // }
 }
