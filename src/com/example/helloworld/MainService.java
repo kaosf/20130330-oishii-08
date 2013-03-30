@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.widget.Toast;
+import android.app.Notification;
+import android.app.NotificationManager;
 
 public class MainService extends Service {
 
@@ -22,6 +24,11 @@ public class MainService extends Service {
   @Override
   public void onCreate() {
     super.onCreate();
+
+    NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    Notification tuuchi = new Notification(R.drawable.ic_launcher, "Hyahho-", System.currentTimeMillis());
+    nm.notify(1, tuuchi);
+
     this.thread = new Thread(new Runnable() {
       @Override
       public void run() {
