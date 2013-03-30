@@ -29,6 +29,7 @@ public class MainService extends Service {
     // Notification tuuchi = new Notification(R.drawable.ic_launcher, "Hyahho-", System.currentTimeMillis());
     // nm.notify(1, tuuchi);
     //// Icon is needed.
+    // startForeground(1, tuuchi);
 
     this.thread = new Thread(new Runnable() {
       @Override
