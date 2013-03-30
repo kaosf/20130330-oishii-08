@@ -38,11 +38,13 @@ public class MainService extends Service {
         }
       }
     });
+    this.thread.start();
   }
 
   @Override
   public void onDestroy() {
     super.onDestroy();
+    this.thread.interrupt();
   }
 
 }
