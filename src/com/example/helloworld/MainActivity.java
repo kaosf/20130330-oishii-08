@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class MainActivity extends Activity {
 
@@ -22,6 +23,19 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "TEST", Toast.LENGTH_LONG).show();
                 Log.d("Tam", "Yokoyama");
+                Intent intent = new Intent(MainActivity.this, MainService.class);
+                startService(intent);
+            }
+        });
+
+        Button stopbutton = (Button) findViewById(R.id.button2);
+        stopbutton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "TEST", Toast.LENGTH_LONG).show();
+                Log.d("TamTam", "Yokoyama 2nd");
+                Intent intent = new Intent(MainActivity.this, MainService.class);
+                stopService(intent);
             }
         });
     }
