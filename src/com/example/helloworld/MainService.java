@@ -25,9 +25,10 @@ public class MainService extends Service {
   public void onCreate() {
     super.onCreate();
 
-    NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-    Notification tuuchi = new Notification(R.drawable.ic_launcher, "Hyahho-", System.currentTimeMillis());
-    nm.notify(1, tuuchi);
+    // NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+    // Notification tuuchi = new Notification(R.drawable.ic_launcher, "Hyahho-", System.currentTimeMillis());
+    // nm.notify(1, tuuchi);
+    //// Icon is needed.
 
     this.thread = new Thread(new Runnable() {
       @Override
