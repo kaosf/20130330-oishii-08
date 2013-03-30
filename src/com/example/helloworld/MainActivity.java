@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "TEST", Toast.LENGTH_LONG).show();
+                Log.d("Tam", "Yokoyama");
             }
         });
     }
