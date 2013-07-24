@@ -23,3 +23,7 @@ ant debug
 ```
 adb -d install -r bin/MainActivity-debug.apk
 ```
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
